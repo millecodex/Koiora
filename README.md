@@ -2,7 +2,7 @@
 Proof of Concept for event logging to Polygon's Mumbai testnet. Polygon is an Ethereum layer 2.
 
 ## Pre-requirements
-1. npm
+1. [npm](https://www.npmjs.com/); to update: `sudo npm install npm@latest -g`
 2. [node.js](https://nodejs.org/en/download/); instructions [here](https://learnubuntu.com/install-node/)
 
 ## Requirements
