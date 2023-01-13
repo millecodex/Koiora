@@ -19,9 +19,9 @@ Proof of Concept for event logging to Polygon's Mumbai testnet. Polygon is an Et
 # Contracts
 Two contracts have been deployed on Mumbai, they can be found in the `contracts\` folder. The Public version allows anyone to call the contract and write data. The regular version is restricted to the contract owner with whitelist functionality.
 1. `KoioraTestLogger.sol`\
-   contract address: `0xXXX`
+   contract address: `0x2b7e6291E5eAACd2f8515b007850622807e8F994`, ([polygonscan](https://mumbai.polygonscan.com/address/0x2b7e6291e5eaacd2f8515b007850622807e8f994))
 2. `KoioraTestLoggerPublic.sol`\
-   contract address: `0x1a61eCd9d21610B0E8c315d57a0730848494E072`
+   contract address: `0x1a61eCd9d21610B0E8c315d57a0730848494E072`, ([polygonscan](https://mumbai.polygonscan.com/address/0x1a61eCd9d21610B0E8c315d57a0730848494E072))
 
 # Writing to Polygon
 Hardhat will handle the following workflow with the `update.js` script:
