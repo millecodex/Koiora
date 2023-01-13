@@ -28,5 +28,12 @@ async function main() {
     const setTx = await KoioraTestLoggerContract.writeHash(t3);
     await setTx.wait();
     console.log("Update sent to the mempool");
-  }
-  main();
+}
+ 
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+      }
+    );
