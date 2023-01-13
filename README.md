@@ -100,7 +100,10 @@ async function main() {
 }
 ```
 
-The data we wrote to the chain is in the data field:
+The data we wrote to the chain is in the first data field:
 ```
 data: '0x0eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 ```
+
+# Verifying the Data
+🏗️ under construction 🚧
