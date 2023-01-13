@@ -1,5 +1,6 @@
 # Koiora Project
-Proof of Concept for event logging to Polygon's Mumbai testnet. Polygon is an Ethereum layer 2.
+Koiora project[^1] proof of concept for event logging to Polygon's Mumbai testnet. Polygon is an Ethereum layer 2. Essentially this is timestamping that is quick and cheap and can be easily verified at some point in the future, possibly by third parties that are given access to the source logs.
+[^1]: Koiora means 'life' in [M&#x0101;ori](https://maoridictionary.co.nz/search?idiom=&phrase=&proverb=&loan=&histLoanWords=&keywords=koiora)
 
 ## Pre-requirements
 1. [npm](https://www.npmjs.com/)\
