@@ -1,5 +1,5 @@
 # Koiora Project
-Koiora project[^1] proof of concept for event logging to Polygon's Mumbai testnet. Polygon is an Ethereum layer 2. Essentially this is timestamping that is quick and cheap and can be easily verified at some point in the future, possibly by third parties that are given access to the source logs.
+Koiora project[^1] is a proof of concept for event logging to Polygon's Mumbai testnet. [Polygon](https://polygon.technology/) is an Ethereum layer 2. Essentially this is immutable timestamping with a blockchain that is quick and cheap and can be easily verified at some point in the future, possibly by third parties that are given access to the source logs. It should be quick to post and confirm transactions, cheap for high volume throughput with low gas fees, and verifiable by reading from the chain and comparing a hash output.
 [^1]: Koiora means 'life' in [M&#x0101;ori](https://maoridictionary.co.nz/search?idiom=&phrase=&proverb=&loan=&histLoanWords=&keywords=koiora)
 
 ## Pre-requirements
@@ -42,7 +42,8 @@ async function main() {
 ```
 
 # Reading from Polygon
-The [Alchemy SDK](https://docs.alchemy.com/) is used to pull data from the blockchain. It works like a regular API; you need a developer api key from signing up with Alchemy.
+The [Alchemy SDK](https://docs.alchemy.com/) is used to pull data from the blockchain. It works like a regular API; you need a developer api key from signing up with Alchemy. The API follows a JSON-RPC standard. JSON-RPC is a stateless, lightweight, remote procedure call (RPC) protocol that is commonly used when interacting with Ethereum.
+
 The `getTxInfo.js` script takes in a transaction hash and retrieves the receipt with `getTransactionReceipt`. Code examples (in myriad languages) can be found on the [docs](https://docs.alchemy.com/reference/sdk-gettransactionreceipt) page. 
 
 ```js
@@ -57,8 +58,8 @@ async function main() {
 }
 ```
 
-### Full Receipt data
-```
+### Full Receipt data (JSON)
+```json5
 {
   to: '0x1a61eCd9d21610B0E8c315d57a0730848494E072',
   from: '0xA9889c0819B7F83c36C7aFBB176Eae59637be780',
@@ -100,7 +101,7 @@ async function main() {
 }
 ```
 
-The data we wrote to the chain is in the first data field:
+The data we wrote to the chain is in the first logs.data field:
 ```
 data: '0x0eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 ```
