@@ -27,7 +27,8 @@ var t3 = "0x0eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
 async function main() {
     const setTx = await KoioraTestLoggerContract.writeHash(t3);
     await setTx.wait();
-    console.log("Update sent to the mempool");
+    console.log("Transaction sent to the mempool");
+    //fancier logging here
 }
  
 main()

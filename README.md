@@ -32,8 +32,8 @@ Hardhat will handle the following workflow with the `update.js` script:
 
 ```js
 async function main() {
-    \\writeHash is the function in the KoioraTestLogger smart contract that includes 
-    \\tx - the 32-byte object - in the transaction
+    //writeHash is the function in the KoioraTestLogger smart contract that includes 
+    //tx - the 32-byte object - in the transaction
     const setTx = await KoioraTestLoggerContract.writeHash(tx);
     await setTx.wait();
     console.log("Update sent to the mempool");
@@ -42,12 +42,14 @@ async function main() {
 
 # Reading from Polygon
 The [Alchemy SDK](https://docs.alchemy.com/) is used to pull data from the blockchain. It works like a regular API; you need a developer api key from signing up with Alchemy.
-The `getTxInfo.js` script takes in a transaction hash and retrieves the receipt with [`getTransactionReceipt`](https://docs.alchemy.com/reference/sdk-gettransactionreceipt). 
+The `getTxInfo.js` script takes in a transaction hash and retrieves the receipt with `getTransactionReceipt`. Code examples (in myriad languages) can be found on the [docs](https://docs.alchemy.com/reference/sdk-gettransactionreceipt) page. 
 
 ```js
 async function main() {
+  //latest block can be handy for debugging 
   const latestBlock = await alchemy.core.getBlockNumber();
   console.log("The latest block number is", latestBlock);
+  //pass a transaction hash
   const txHash = "0xe32d30995238e0d043f99efc743642233991a230ddd0f6de54aee9fde51a887c";
   const txinfo = await alchemy.core.getTransactionReceipt(txHash);
   console.log("The info is", txinfo);
