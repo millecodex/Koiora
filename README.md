@@ -18,7 +18,7 @@ Koiora project[^1] is a proof of concept for event logging to Polygon's Mumbai t
    install: `npm install dotenv --save`
 
 # Contracts
-Two contracts have been deployed on Mumbai, they can be found in the `contracts\` folder. The Public version allows anyone to call the contract and write data. The regular version is restricted to the contract owner with whitelist functionality.
+Two contracts have been deployed on Mumbai, they can be found in the `contracts` folder. The Public version allows anyone to call the contract and write data. The regular version is restricted to the contract owner with whitelist functionality.
 1. `KoioraTestLogger.sol`\
    contract address: `0x2b7e6291E5eAACd2f8515b007850622807e8F994`, ([polygonscan](https://mumbai.polygonscan.com/address/0x2b7e6291e5eaacd2f8515b007850622807e8f994))
 2. `KoioraTestLoggerPublic.sol`\
