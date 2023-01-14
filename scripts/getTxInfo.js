@@ -1,3 +1,5 @@
+// use the Alchemy API to read data from Polygon-Mumbai
+// returns a tx receipt based on a tx hash
 const { Network, Alchemy } = require("alchemy-sdk");
 const API_KEY = process.env.ALCHEMY_API_KEY;
 
@@ -12,11 +14,12 @@ const settings = {
 const alchemy = new Alchemy(settings);
 
 async function main() {
+  //latest block can be handy for debugging 
   const latestBlock = await alchemy.core.getBlockNumber();
   console.log("The latest block number is", latestBlock);
   const txHash = "0xe32d30995238e0d043f99efc743642233991a230ddd0f6de54aee9fde51a887c";
   const txinfo = await alchemy.core.getTransactionReceipt(txHash);
-  console.log("The info is", txinfo);
+  console.log("The full receipt info is:", txinfo);
 }
 
 main()

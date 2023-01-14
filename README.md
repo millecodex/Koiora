@@ -31,13 +31,16 @@ Hardhat will handle the following workflow with the `update.js` script:
 3. create blockchain transaction
 4. send transaction to the chain
 
+```
+npx hardhat run scripts/update.js
+```
+
+The function call returns a transaction hash:
 ```js
 async function main() {
-    //writeHash is the function in the KoioraTestLogger smart contract that includes 
-    //tx - the 32-byte object - in the transaction
-    const setTx = await KoioraTestLoggerContract.writeHash(tx);
+    const setTx = await KoioraTestLoggerContract.writeHash(hash);
     await setTx.wait();
-    console.log("Update sent to the mempool");
+    console.log("Transaction hash: " + setTx.hash);
 }
 ```
 
@@ -48,9 +51,6 @@ The `getTxInfo.js` script takes in a transaction hash and retrieves the receipt 
 
 ```js
 async function main() {
-  //latest block can be handy for debugging 
-  const latestBlock = await alchemy.core.getBlockNumber();
-  console.log("The latest block number is", latestBlock);
   //pass a transaction hash
   const txHash = "0xe32d30995238e0d043f99efc743642233991a230ddd0f6de54aee9fde51a887c";
   const txinfo = await alchemy.core.getTransactionReceipt(txHash);
