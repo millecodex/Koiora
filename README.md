@@ -13,7 +13,7 @@ Koiora project[^1] is a proof of concept for event logging to Polygon's Mumbai t
    install: `npm install alchemy-sdk`
 2. [Hardhat](https://hardhat.org/) provides a developer environment so that we can easily configure environments, settings, and tests.\
    install: `npm install --save-dev hardhat`
-3. [Ethers.js](https://docs.ethers.io/v5/) is a Javascript SDK that provides a nice developer experience when you're writing code by wrapping lower-level JSON-RPC API calls.
+3. [Ethers.js](https://docs.ethers.io/v5/) is a Javascript SDK that provides a nice developer experience when you're writing code by wrapping lower-level JSON-RPC API calls. Ethers is implicitly available within Hardhat.
 4. [dotenv](https://www.npmjs.com/package/dotenv) initiated in your working directory\
    install: `npm install dotenv --save`
 
