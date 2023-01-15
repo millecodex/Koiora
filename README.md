@@ -44,6 +44,12 @@ async function main() {
 }
 ```
 
+```
+Transaction sent to the mempool.
+Transaction mined in 8.036 seconds.
+Transaction hash: 0x0dc4cd68618ff4c44a05dfa3e6580894dfe54fff6a0cf23643a31b76f3199f2e
+```
+
 # Reading from Polygon
 The [Alchemy SDK](https://docs.alchemy.com/) is used to pull data from the blockchain. It works like a regular API; you need a developer api key from signing up with Alchemy. The API follows a JSON-RPC standard. JSON-RPC is a stateless, lightweight, remote procedure call (RPC) protocol that is commonly used when interacting with Ethereum.
 
