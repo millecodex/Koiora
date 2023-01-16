@@ -1,6 +1,6 @@
 # Koiora Project
-Koiora project[^1] is a proof of concept for event logging to Polygon's Mumbai testnet. [Polygon](https://polygon.technology/) is an Ethereum layer 2. Essentially this is immutable timestamping with a blockchain that is quick and cheap and can be easily verified at some point in the future, possibly by third parties that are given access to the source logs. It should be quick to post and confirm transactions, cheap for high volume throughput with low gas fees, and verifiable by reading from the chain and comparing a hash output.
-[^1]: Koiora means 'life' in [M&#x0101;ori](https://maoridictionary.co.nz/search?idiom=&phrase=&proverb=&loan=&histLoanWords=&keywords=koiora)
+Koiora project[^defn] is a proof of concept for event logging to Polygon's Mumbai testnet. [Polygon](https://polygon.technology/) is an Ethereum layer 2. Essentially this is immutable timestamping with a blockchain that is quick and cheap and can be easily verified at some point in the future, possibly by third parties that are given access to the source logs. It should be quick to post and confirm transactions, cheap for high volume throughput with low gas fees, and verifiable by reading from the chain and comparing a hash output.
+[^defn]: Koiora means 'life' in [M&#x0101;ori](https://maoridictionary.co.nz/search?idiom=&phrase=&proverb=&loan=&histLoanWords=&keywords=koiora)
 
 ## Pre-requirements
 1. [npm](https://www.npmjs.com/)\
@@ -114,3 +114,17 @@ data: '0x0eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 
 # Verifying the Data
 🏗️ under construction 🚧
+
+Data verifcation involves reading a hash from a public blockchain and comparing to a hashed value of a known event. If the hashes match the data is said to be verified as of the block number (timestamp) the hash was originally written in.
+
+## An example scenario
+Timestamping:
+1. Alice marks a project milestone (PM1) as complete
+2. metadata about the event is logged and saved internally
+3. the log data is hashed using `SHA256` (or `SHA-3-256`)[^SHA]
+[^SHA]: SHA-3 is the third generation of secure hashing algorithms officially recommended for use by the NIST in 2015. Both SHA256 (gen-2) and SHA-3-256 are convenient because they are commonly used in blockchains and output a 32-byte hash which 'fills' the data field for our application
+4. the hash is written to a public blockchain
+
+Auditing:
+5. Bob obtains log data regarding PM1
+6. Bob independently hashes the log data using `SHA256`
