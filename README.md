@@ -118,13 +118,17 @@ data: '0x0eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 Data verifcation involves reading a hash from a public blockchain and comparing to a hashed value of a known event. If the hashes match the data is said to be verified as of the block number (timestamp) the hash was originally written in.
 
 ## An example scenario
-Timestamping:
-1. Alice marks a project milestone (PM1) as complete
+**Timestamping:**
+1. Alice marks a project milestone (e.g. PM1) as complete
 2. metadata about the event is logged and saved internally
 3. the log data is hashed using `SHA256` (or `SHA-3-256`)[^SHA]
-[^SHA]: SHA-3 is the third generation of secure hashing algorithms officially recommended for use by the NIST in 2015. Both SHA256 (gen-2) and SHA-3-256 are convenient because they are commonly used in blockchains and output a 32-byte hash which 'fills' the data field for our application
 4. the hash is written to a public blockchain
 
-Auditing:
+[^SHA]: SHA-3 is the third generation of secure hashing algorithms officially recommended for use by the NIST in 2015. Both SHA256 (gen-2) and SHA-3-256 are convenient because they are commonly used in blockchains and output a 32-byte hash which 'fills' the data field for our application
+
+**Auditing:**
+
 5. Bob obtains log data regarding PM1
 6. Bob independently hashes the log data using `SHA256`
+7. Bob searches the blockchain for a matching hash
+8. Bob analyses the data based on timestamps/frequency/etc.
