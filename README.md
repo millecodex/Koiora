@@ -132,3 +132,34 @@ Data verifcation involves reading a hash from a public blockchain and comparing 
 6. Bob independently hashes the log data using `SHA256`
 7. Bob searches the blockchain for a matching hash
 8. Bob analyses the data based on timestamps/frequency/etc.
+
+The `searchContract.js` script takes in a contract hash and can write all transaction activity to a text file.
+
+```js
+// getLogs retrieves all activity associated with the contract address
+async function getTransactions() {
+  let transactions = await alchemy.core.getLogs({
+      fromBlock: 'earliest',
+      toBlock: 'latest',
+      address: '0x1a61eCd9d21610B0E8c315d57a0730848494E072'
+  });
+  return transactions;
+}
+```
+```
+> I found 22 transactions in total. The full data has been written to transactions.txt.
+```
+Given a specific hash to search for within the transactions returns block number and transaction hash of any associated txs.
+```
+Searching for 0x2e99758548972a8e8822ad47fa1017ff72f06f3ff6a016851f45c398732bc50c
+I found 4 matching results:
+{
+  blockNumber: 30931338,
+  transactionHash: '0xbb0422bab741778da34ef2bf8d536d2ffbf1dd918a0e846034d71ba2019d8f3a',
+  data: '0x2e99758548972a8e8822ad47fa1017ff72f06f3ff6a016851f45c398732bc50c'
+}
+.
+.
+.
+```
+
