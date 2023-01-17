@@ -108,7 +108,7 @@ async function main() {
 ```
 
 The data we wrote to the chain is in the first logs.data field:
-```
+```json5
 data: '0x0eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 ```
 
@@ -145,7 +145,7 @@ async function getTransactions() {
 }
 ```
 ```
-> I found 22 transactions in total. The full data has been written to transactions.txt.
+I found 22 transactions in total. The full data has been written to transactions.txt.
 ```
 Given a specific hash to search for within the transactions returns block number and transaction hash of any associated txs.
 ```
