@@ -113,8 +113,6 @@ data: '0x0eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
 ```
 
 # Verifying the Data
-🏗️ under construction 🚧
-
 Data verifcation involves reading a hash from a public blockchain and comparing to a hashed value of a known event. If the hashes match the data is said to be verified as of the block number (timestamp) the hash was originally written in.
 
 ## An example scenario
